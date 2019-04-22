@@ -66,13 +66,11 @@ def request_exercise_status():
         print()
         request_exercise_status()
 
+
 def request_workout_options(exercise):
     print('Great choice! Here is a quick description of the workout:')
     print(exercise['description'])
     request_exercise_status()
-
-
-    # Update profile when workout is complete
 
 
 def request_workout(category_id):
@@ -107,8 +105,8 @@ def request_category():
 
     requested_category = request_input('\nYour selection: ')
     if requested_category.lower() in categories:
-        request_workout(categories[requested_category.lower()])
         update_last_muscle_group(requested_category)
+        request_workout(categories[requested_category.lower()])
     else:
         print('\nPlease enter in a valid muscle group:')
         request_category()
